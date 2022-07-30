@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vendors/jquery.js"></script>
+    <script src="./scripts/client.js"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <h1>server side calculator</h1>
+
+<!-- 
+    Create a user interface where 
+    the user can input two values 
+    (2 input elements) and the select
+    type of mathematical operation. -->
+
+<div id="inputs">
+    <input type="number" id="number0">
+    <input type="number" id="number1">
+</div>
+
+<div>
+    <h1 id="result">result<h1>
+</div>
+
+<div id="operators">
+    <button id="add">+</button>
+    <button id="subtract">-</button>
+    <button id="multiply">*</button>
+    <button id="divide">%</button>
+</div>
+
+
+    <button id="equals">=</button>
+    <button id="clear">c</button>
+    <!-- When the submit (`=` button) is 
+    clicked, capture this input, 
+    bundle it up in an object, and send 
+    this object to the server via a POST. 
+    There should also be a 'C' button 
+    that will clear the user input 
+    fields. -->
+
+</body>
+</html>

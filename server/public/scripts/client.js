@@ -46,13 +46,13 @@ let operator = ('')
 
 function add() {
     operator = 'adding'
-    console.log(operator);
+    return console.log(operator);
 }
 
 function renderToDOM(calculation) {
     $('#result').empty()
     $('#result').append(`
-    <h1>${answer}</h1>
+    <h1>${calculation.answer}</h1>
     `)
     console.log('in dom rendering');
 }

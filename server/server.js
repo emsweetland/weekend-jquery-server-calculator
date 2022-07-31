@@ -19,9 +19,10 @@ app.use(express.static('server/public'));
 // custom arrays
 
 let calculation = [];
-//let difference=[];
-//let product=[];
-//let quotient = [];
+let answer =  { answer : 0};
+
+let num0 = ('')
+let num1 = ('')
 
 
 // must be added before GET & POST routes
@@ -33,16 +34,19 @@ app.use(express.static('server/public'));
 // GET & POST routes go here
 
 //started routes
-app.get('/calculate', function (req, res) {
-    console.log('get /calculate')
-    res.send(calculation);
+app.get('/calculate', (req, res) => {
+    console.log('get /calculate');
+    console.log(answer);
+    calculate();
+    console.log(answer);
+    res.send(answer);
 })
 
-app.post('/calculate', function (req, res) {
-    console.log('POST /calculation');
+app.post('/calculate', (req, res) => {
+    console.log('POST / calculation');
     console.log(req.body);
-    calculation.push({taco : req.body});
-    res.send(   );
+    calculation.push(req.body);
+    res.sendStatus(200);
 })
 
 app.listen(PORT, () => {
@@ -51,48 +55,19 @@ app.listen(PORT, () => {
 
 
 function calculate(){
-    if(operator = 'adding') {
-        console.log(operator);
-        add();
+    for(let taco of calculation){
+    num0 = Number(taco.number0);
+    num1 = Number(taco.number1);
+   if(taco.operator = 'adding') {
+        console.log(taco.operator);
+        add(num0, num1);
+  } return console.log(calculation)
+}}
+
+function add () {
+  console.log('in add');
+   let sum = num0 + num1;
+   console.log(sum);
+   answer = { answer : sum};
+   return console.log(answer)
     }
-}
-
-function add (number0, number1) {
-    console.log('in add');
-    let sum = number0 + number1;
-    console.log(sum);
-    return calculation.push(sum);
-    }
-
-
-
-
-
-
-
-
-
-
-//function subtract (number0, number1) {
-//    console.log('in subtract');
-//    let sum = number0 - number1;
-//    return sum
-//}
-
-//function multiply (number0, number1) {
-//    console.log('in multiply');
-//    let sum = number0 * number1;
-//    return sum 
-//}
-
-//function divide   (number0, number1) {
-//    console.log('in divide');
-//    let sum = number0 / number1;
-//    return sum
-//}
-
-
-
-
-
-//send 
